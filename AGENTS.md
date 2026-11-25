@@ -1,4 +1,5 @@
 <!-- LOVABLE:BEGIN -->
+
 > [!IMPORTANT]
 > This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
 > published git history — force pushing, or rebasing/amending/squashing commits
@@ -27,4 +28,12 @@ use the editor.
   `LOVABLE_API_KEY`. When Lovable does not provide one, users can bring their
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
+
 <!-- LOVABLE:END -->
+
+## Application architecture
+
+- Keep candidate and workflow state in the shared BridgePath provider and persist it to localStorage after hydration; the brief explicitly requires device-local persistence.
+- Keep scoring, matching, eligibility and readiness formulas in a browser-safe pure module with rule tests; every track must use the same calculations.
+- Treat passport scores, credential mapping, legal guidance, listings and cohort numbers as hackathon simulations, not external verification or live services; the prototype has no external verification or partner integration.
+- Use separate TanStack content routes for each track and dashboard, with a shared root navigation and page-specific metadata; all named destinations must open directly.
