@@ -28,7 +28,7 @@ export const Route = createFileRoute("/track-2")({
       { property: "og:title", content: "Legal & Payment Hub | BridgePath" },
       {
         property: "og:description",
-        content: "Navigate a new work system with practical guidance in four languages.",
+        content: "Navigate a new work system with practical guidance in five languages.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -70,7 +70,7 @@ function LegalHub() {
         description={t.intro}
       >
         <div className="language-toggle" aria-label="Guidance language">
-          {["English", "Arabic", "French", "Swahili"].map((language) => (
+          {["English", "Arabic", "French", "Swahili", "Chinese"].map((language) => (
             <Button
               key={language}
               variant="ghost"
@@ -79,7 +79,13 @@ function LegalHub() {
               className={state.language === language ? "selected" : ""}
               onClick={() => setState((s) => ({ ...s, language }))}
             >
-              {language === "Arabic" ? "العربية" : language === "French" ? "Français" : language}
+              {language === "Arabic"
+                ? "العربية"
+                : language === "French"
+                  ? "Français"
+                  : language === "Chinese"
+                    ? "中文"
+                    : language}
             </Button>
           ))}
         </div>
@@ -138,7 +144,9 @@ function LegalHub() {
                 ? "fr"
                 : state.language === "Swahili"
                   ? "sw"
-                  : "en"
+                  : state.language === "Chinese"
+                    ? "zh"
+                    : "en"
           }
         >
           <SectionLabel>

@@ -11,3 +11,6 @@
 - [x] Remove event and platform-provider branding without changing layout or simulation boundaries.
 - [x] Expand document statuses with backward-compatible mappings; preserve demo and localStorage state.
 - [x] Verify all pages, exports, printing, mobile navigation and document mapping tests.
+
+- [x] Update hero subheading and badge; add Chinese guidance to the existing language switcher.
+- [x] Verify language switching, saved selection and unchanged layout and checklist behavior.

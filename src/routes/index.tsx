@@ -72,7 +72,7 @@ const tracks = [
       "Hiring compliance for employers",
     ],
     action: "Explore legal & payment hub",
-    note: "Available in 4 languages",
+    note: "Available in 5 languages",
   },
   {
     to: "/track-3" as const,
@@ -120,7 +120,7 @@ function Overview() {
         <div className="hero-content">
           <div className="hero-eyebrow">
             <Sparkles size={12} />
-            Unlocking displaced talent
+            Pathways for global talent
           </div>
           <h1>
             BridgePath
@@ -130,8 +130,8 @@ function Overview() {
             <span>Neither should opportunity.</span>
           </h1>
           <p>
-            Displacement shouldn’t mean starting from zero. Validate your skills, navigate new
-            systems, and connect to meaningful work — all in one place.
+            Validate your skills, navigate new systems, and connect to meaningful work — all in one
+            place.
           </p>
           <div className="hero-actions">
             <Button asChild>
