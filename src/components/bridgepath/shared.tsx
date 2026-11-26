@@ -18,20 +18,18 @@ import { Button } from "@/components/ui/button";
 import { useBridgePath } from "./state";
 export const navigation = [
   { to: "/" as const, title: "Overview", icon: RouteIcon },
-  { to: "/track-1" as const, title: "AI Skill Passport", icon: Fingerprint },
+  { to: "/track-1" as const, title: "Skill Passport", icon: Fingerprint },
   { to: "/track-2" as const, title: "Legal & Payment Hub", icon: Globe2 },
   { to: "/track-3" as const, title: "Returnships & Mentors", icon: Users },
   { to: "/dashboard" as const, title: "Impact Dashboard", icon: LayoutDashboard },
 ];
 export function Brand() {
   return (
-    <Link to="/" className="brand" aria-label="BridgePath AI home">
+    <Link to="/" className="brand" aria-label="BridgePath home">
       <span className="brand-mark">
         <RouteIcon size={22} />
       </span>
-      <span>
-        BridgePath<span className="text-primary"> AI</span>
-      </span>
+      <span>BridgePath</span>
     </Link>
   );
 }
@@ -43,7 +41,7 @@ export function Header() {
     <>
       <div className="event-bar">
         <span>
-          <span className="event-dot" /> PLP × ILO Mini-Hackathon
+          <span className="event-dot" /> BridgePath
         </span>
         <span className="event-sub">
           Unlocking Displaced Talent <span className="mx-2">/</span> SDG-aligned innovation{" "}
@@ -122,9 +120,7 @@ export function Footer() {
     <footer className="site-footer">
       <Brand />
       <span>Talent has no borders. Opportunity shouldn’t either.</span>
-      <span className="footer-credit">
-        Built for PLP × ILO <span className="text-primary">2026</span>
-      </span>
+      <span className="footer-credit">© 2026 BridgePath. All rights reserved.</span>
     </footer>
   );
 }

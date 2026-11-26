@@ -19,13 +19,13 @@ import { guidance, regionalResources } from "@/lib/guidance";
 export const Route = createFileRoute("/track-2")({
   head: () => ({
     meta: [
-      { title: "Legal & Payment Hub | BridgePath AI" },
+      { title: "Legal & Payment Hub | BridgePath" },
       {
         name: "description",
         content:
           "Multilingual work-readiness checklists, payment setup, contractor invoice previews and employer compliance guidance.",
       },
-      { property: "og:title", content: "Legal & Payment Hub | BridgePath AI" },
+      { property: "og:title", content: "Legal & Payment Hub | BridgePath" },
       {
         property: "og:description",
         content: "Navigate a new work system with practical guidance in four languages.",

@@ -22,22 +22,19 @@ import heroAsset from "@/assets/bridgepath-team.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BridgePath AI | Unlocking displaced talent" },
+      { title: "BridgePath | Unlocking displaced talent" },
       {
         name: "description",
         content:
-          "Turn skills into opportunity with an AI skill passport, legal and financial readiness, paid returnships and industry mentors.",
+          "Turn skills into opportunity with a skill passport, legal and financial readiness, paid returnships and industry mentors.",
       },
-      { property: "og:title", content: "BridgePath AI | Unlocking displaced talent" },
+      { property: "og:title", content: "BridgePath | Unlocking displaced talent" },
       {
         property: "og:description",
-        content:
-          "Three connected pathways. One future without borders. Built for the PLP x ILO Mini-Hackathon.",
+        content: "Three connected pathways. One future without borders.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: heroAsset.url },
-      { name: "twitter:image", content: heroAsset.url },
     ],
   }),
   component: Overview,
@@ -49,7 +46,7 @@ const tracks = [
     icon: Fingerprint,
     color: "",
     title: "Let your skills speak.",
-    subtitle: "AI Skill Passport",
+    subtitle: "Skill Passport",
     description:
       "Turn experience into recognized potential — even when your credentials can’t make the journey.",
     features: [
@@ -126,7 +123,7 @@ function Overview() {
             Unlocking displaced talent
           </div>
           <h1>
-            BridgePath AI
+            BridgePath
             <br />
             Talent has no borders.
             <br />
@@ -271,7 +268,7 @@ function Overview() {
         </span>
         <span>
           <GraduationCap size={13} />
-          Illustrative cohort data <span>·</span> PLP × ILO Mini-Hackathon <CircleCheck size={12} />
+          Illustrative cohort data <CircleCheck size={12} />
         </span>
       </div>
     </main>

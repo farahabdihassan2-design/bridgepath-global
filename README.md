@@ -1,29 +1,28 @@
-# Welcome to your Lovable project
+# BridgePath
 
-This project was built with [Lovable](https://lovable.dev).
+Skills-first pathways to meaningful work for displaced talent.
 
-## Build with Lovable
+## The platform
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+- Skill Passport: professional profiles, competency pathways, micro-assessments and printable skill records.
+- Legal & Payment Hub: multilingual preparation checklists and contractor invoice previews.
+- Returnships & Mentors: illustrative skills-first opportunities and locally tracked applications, mentorship requests and milestones.
+- Impact Dashboard: candidate readiness, sample cohort data and downloadable readiness reports.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+Progress is saved privately on the current device. Scores, credential mappings, legal guidance, opportunities and cohort figures are simulations, not independent verification or live partner services.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
 ```
 
-## Built with
+## Technology
 
 - TanStack Start
 - TypeScript
 - React
 - Tailwind CSS
+
+© 2026 BridgePath. All rights reserved.

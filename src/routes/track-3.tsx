@@ -20,13 +20,13 @@ import { listings, matchScore } from "@/lib/bridgepath";
 export const Route = createFileRoute("/track-3")({
   head: () => ({
     meta: [
-      { title: "Returnships & Mentors | BridgePath AI" },
+      { title: "Returnships & Mentors | BridgePath" },
       {
         name: "description",
         content:
           "Find skills-first employers, paid 4–12 week returnships and industry mentors matched to your skill passport.",
       },
-      { property: "og:title", content: "Returnships & Mentors | BridgePath AI" },
+      { property: "og:title", content: "Returnships & Mentors | BridgePath" },
       {
         property: "og:description",
         content:
@@ -74,7 +74,7 @@ function Marketplace() {
       mentor ? "Mentorship request saved" : "Application saved with your skill passport",
       {
         description:
-          "Hackathon simulation: this request is tracked on your device, not sent to an external partner.",
+          "Demonstration: this request is tracked on your device, not sent to an external partner.",
       },
     );
   }
@@ -147,7 +147,7 @@ function Marketplace() {
         <span className="muted-note">
           {filtered.length} {tab.toLowerCase()} · ranked by skill match
         </span>
-        <span className="muted-note">Illustrative hackathon opportunities</span>
+        <span className="muted-note">Illustrative opportunities</span>
       </div>
       {!state.passport && (
         <div className="notice mb-6 mt-0">

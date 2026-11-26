@@ -84,12 +84,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "BridgePath AI | Pathways for displaced talent" },
+      { title: "BridgePath | Pathways for displaced talent" },
       {
         name: "description",
         content: "Skills-first pathways to meaningful employment for skilled refugees.",
       },
-      { property: "og:title", content: "BridgePath AI" },
+      { property: "og:title", content: "BridgePath" },
       {
         property: "og:description",
         content: "Skills-first pathways to meaningful employment for skilled refugees.",

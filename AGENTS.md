@@ -35,5 +35,6 @@ use the editor.
 
 - Keep candidate and workflow state in the shared BridgePath provider and persist it to localStorage after hydration; the brief explicitly requires device-local persistence.
 - Keep scoring, matching, eligibility and readiness formulas in a browser-safe pure module with rule tests; every track must use the same calculations.
-- Treat passport scores, credential mapping, legal guidance, listings and cohort numbers as hackathon simulations, not external verification or live services; the prototype has no external verification or partner integration.
+- Treat passport scores, credential mapping, legal guidance, listings and cohort numbers as simulations, not external verification or live services; the prototype has no external verification or partner integration.
 - Use separate TanStack content routes for each track and dashboard, with a shared root navigation and page-specific metadata; all named destinations must open directly.
+- Preserve the existing storage key and legacy document values; normalize expanded document statuses through the shared pure mapping so old saved profiles and all existing calculations remain compatible.

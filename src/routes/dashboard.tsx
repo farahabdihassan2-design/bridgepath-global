@@ -26,13 +26,13 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Readiness & Impact Dashboard | BridgePath AI" },
+      { title: "Readiness & Impact Dashboard | BridgePath" },
       {
         name: "description",
         content:
           "Track skill verification, legal and payment readiness, applications and fellowship milestones in one dashboard.",
       },
-      { property: "og:title", content: "Readiness & Impact Dashboard | BridgePath AI" },
+      { property: "og:title", content: "Readiness & Impact Dashboard | BridgePath" },
       {
         property: "og:description",
         content: "Measure candidate progress and preview skills-first cohort onboarding at scale.",
@@ -57,7 +57,7 @@ function Dashboard() {
       mentors: state.mentors.map((id) => listings.find((l) => l.id === id)?.name ?? id),
       completedMilestones: state.milestone,
       disclaimer:
-        "Hackathon simulation. Self-reported data; not accredited verification or legal authorization.",
+        "Demonstration. Self-reported data; not accredited verification or legal authorization.",
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);

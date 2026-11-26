@@ -11,8 +11,21 @@ import {
   readiness,
   invoiceTotal,
   listings,
+  normalizeDocumentStatus,
 } from "@/lib/bridgepath";
 describe("BridgePath rules", () => {
+  it("maps recognized degrees to existing full-records logic", () => {
+    expect(normalizeDocumentStatus("Recognized Degree / Full Records")).toBe("Full Records");
+    expect(normalizeDocumentStatus("Full Records")).toBe("Full Records");
+  });
+  it("maps partial records to existing unrecognized-degree logic", () => {
+    expect(normalizeDocumentStatus("Partial Records / Transcript Only")).toBe(
+      "Foreign Degree - Unrecognized",
+    );
+    expect(normalizeDocumentStatus("Foreign Degree - Unrecognized")).toBe(
+      "Foreign Degree - Unrecognized",
+    );
+  });
   it("returns a competency score within the required 0–100 range", () => {
     expect(competencyScore({ ...demoState.candidate, years: 60, skills: "a,b,c,d,e,f,g,h" })).toBe(
       100,

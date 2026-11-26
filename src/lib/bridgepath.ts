@@ -27,6 +27,30 @@ export type AppState = {
   invoice: { client: string; description: string; hours: number; rate: number; currency: string };
 };
 export const STORAGE_KEY = "bridgepath-ai-v1";
+export const documentStatuses = [
+  {
+    value: "Full Records",
+    label:
+      "Recognized Degree / Full Records — Verified qualifications and complete academic documents",
+  },
+  {
+    value: "Foreign Degree - Unrecognized",
+    label: "Foreign Degree - Unrecognized — Degree awaiting local equivalency or recognition",
+  },
+  {
+    value: "Partial Records / Transcript Only",
+    label: "Partial Records / Transcript Only — Incomplete academic documentation",
+  },
+  {
+    value: "Records Lost in Displacement",
+    label: "Records Lost in Displacement — Verify ability via micro-assessment and work history",
+  },
+];
+export function normalizeDocumentStatus(status: string) {
+  if (status === "Recognized Degree / Full Records") return "Full Records";
+  if (status === "Partial Records / Transcript Only") return "Foreign Degree - Unrecognized";
+  return status;
+}
 export const blankCandidate: Candidate = {
   name: "",
   role: "",

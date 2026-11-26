@@ -21,18 +21,20 @@ import {
   quiz,
   quizScore,
   stipendEligible,
+  documentStatuses,
+  normalizeDocumentStatus,
   type Candidate,
 } from "@/lib/bridgepath";
 export const Route = createFileRoute("/track-1")({
   head: () => ({
     meta: [
-      { title: "AI Skill Passport | BridgePath AI" },
+      { title: "Skill Passport | BridgePath" },
       {
         name: "description",
         content:
           "Map your professional experience to a competency pathway, complete a micro-assessment and create a portable skill passport.",
       },
-      { property: "og:title", content: "AI Skill Passport | BridgePath AI" },
+      { property: "og:title", content: "Skill Passport | BridgePath" },
       {
         property: "og:description",
         content: "Your experience matters, even when your records are missing.",
@@ -75,7 +77,7 @@ function SkillPassport() {
   }
   async function copy() {
     if (!state.passport) return;
-    const text = `BridgePath AI — Skill Passport\n${candidate.name} | ${candidate.role}\nVerification ID: ${state.passport.id}\nIndicative competency score: ${state.passport.score}/100\nSkills: ${candidate.skills}\nCredential pathway: ${equivalence(candidate)}\nMicro-assessment: ${quizScore(state.answers)}/3\nHackathon prototype — not accredited credential verification.`;
+    const text = `BridgePath — Skill Passport\n${candidate.name} | ${candidate.role}\nVerification ID: ${state.passport.id}\nIndicative competency score: ${state.passport.score}/100\nSkills: ${candidate.skills}\nCredential pathway: ${equivalence(candidate)}\nMicro-assessment: ${quizScore(state.answers)}/3\nSelf-reported skills record — not accredited credential verification.`;
     try {
       await navigator.clipboard.writeText(text);
       toast.success("Skill passport copied");
@@ -149,15 +151,17 @@ function SkillPassport() {
               <label className="field full">
                 Document status
                 <select
-                  value={candidate.documents}
+                  value={
+                    candidate.documents === "Recognized Degree / Full Records"
+                      ? normalizeDocumentStatus(candidate.documents)
+                      : candidate.documents
+                  }
                   onChange={(e) => update("documents", e.target.value)}
                 >
-                  {[
-                    "Full Records",
-                    "Foreign Degree - Unrecognized",
-                    "Records Lost in Displacement",
-                  ].map((v) => (
-                    <option key={v}>{v}</option>
+                  {documentStatuses.map((status) => (
+                    <option key={status.value} value={status.value}>
+                      {status.label}
+                    </option>
                   ))}
                 </select>
               </label>
@@ -206,8 +210,8 @@ function SkillPassport() {
           <div className="notice">
             <ShieldCheck size={16} />
             <span>
-              This hackathon prototype maps self-reported experience using transparent scoring. It
-              does not fetch repositories or certify credentials.
+              This platform maps self-reported experience using transparent scoring. It does not
+              fetch repositories or certify credentials.
             </span>
           </div>
         </section>
@@ -216,7 +220,7 @@ function SkillPassport() {
             <section className="passport print-target">
               <div className="passport-header">
                 <div>
-                  <h2>AI Skill Passport</h2>
+                  <h2>Skill Passport</h2>
                   <small>
                     {state.passport.id} · Generated {state.passport.generatedAt}
                   </small>
@@ -260,7 +264,7 @@ function SkillPassport() {
                     {equivalence(candidate)}
                   </p>
                   <small>
-                    {candidate.documents === "Records Lost in Displacement"
+                    {normalizeDocumentStatus(candidate.documents) === "Records Lost in Displacement"
                       ? "Alternative evidence pathway: work samples + skills assessment."
                       : "Prior learning pathway: submit records for local authority review."}{" "}
                     Formal equivalence requires the receiving authority’s approval.
